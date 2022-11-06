@@ -6,6 +6,10 @@ app.use(express.json());
 const db = require("./models/index");
 const { Member } = db;
 
+app.get("/", (req, res) => {
+  res.send("URL should contain /api/..");
+});
+
 app.get("/api/members", async (req, res) => {
   const { team } = req.query;
   if (team) {
